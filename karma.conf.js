@@ -36,6 +36,7 @@ module.exports = function(config) {
         { pattern: 'test/scripts/script-module-blocked.js',  included: false },
         { pattern: 'test/scripts/script-module-export.js',  included: false },
         { pattern: 'test/scripts/dynamic.js',  included: false },
+        { pattern: 'test/scripts/dynamic-module.js',  included: false },
         'test/test.js'
       ],
       customContextFile,

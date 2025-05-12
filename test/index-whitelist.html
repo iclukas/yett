@@ -25,6 +25,10 @@
             script.setAttribute('src', '/base/test/scripts/dynamic.js')
             script.setAttribute('type', 'application/javascript')
             document.head.appendChild(script)
+            var scriptmodule = document.createElement('script')
+            scriptmodule.setAttribute('src', '/base/test/scripts/dynamic-module.js')
+            scriptmodule.setAttribute('type', 'module')
+            document.head.appendChild(scriptmodule)
         })()
     </script>
 </head>

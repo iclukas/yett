@@ -76,6 +76,9 @@ export const unblock = function(...scriptUrlsOrRegexes) {
                     scriptNode.setAttribute(attribute.name, script.attributes[i].value)
                 }
             }
+            if (typeof script.dataset['type'] === 'string') {
+                type = script.dataset.type
+            }
             scriptNode.setAttribute('src', script.src)
             scriptNode.setAttribute('type', type || 'application/javascript')
             document.head.appendChild(scriptNode)

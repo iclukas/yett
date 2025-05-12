@@ -40,6 +40,9 @@ document.createElement = function(...args) {
                     return typeValue
                 },
                 set(value) {
+                    if(isOnBlacklist(scriptElt.src, scriptElt.type) && value !== TYPE_ATTRIBUTE) {
+                        scriptElt.dataset.type = value;
+                    }
                     const typeValue = isOnBlacklist(scriptElt.src, scriptElt.type) ? TYPE_ATTRIBUTE : value
                     originalDescriptors.type.set.call(this, typeValue)
                 }
