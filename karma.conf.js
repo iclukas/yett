@@ -32,6 +32,9 @@ module.exports = function(config) {
         { pattern: 'test/scripts/not-blocked.js',  included: false },
         { pattern: 'test/scripts/script.js',  included: false },
         { pattern: 'test/scripts/script-blocked.js',  included: false },
+        { pattern: 'test/scripts/script-module.js',  included: false },
+        { pattern: 'test/scripts/script-module-blocked.js',  included: false },
+        { pattern: 'test/scripts/script-module-export.js',  included: false },
         { pattern: 'test/scripts/dynamic.js',  included: false },
         'test/test.js'
       ],

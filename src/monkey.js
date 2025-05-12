@@ -23,6 +23,7 @@ document.createElement = function(...args) {
                 ...originalDescriptors.src,
                 set(value) {
                     if(isOnBlacklist(value, scriptElt.type)) {
+                        scriptElt.dataset.type = scriptElt.type;
                         originalDescriptors.type.set.call(this, TYPE_ATTRIBUTE)
                     }
                     originalDescriptors.src.set.call(this, value)

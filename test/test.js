@@ -27,6 +27,8 @@ describe('Yett', () => {
         assertThatScriptDidNotExecute('script')
         assertThatScriptDidNotExecute('dynamic')
         assertThatScriptDidNotExecute('script-blocked')
+        assertThatScriptDidNotExecute('script-module')
+        assertThatScriptDidNotExecute('script-module-blocked')
     })
     it('should not load scripts that have the javascript/blocked attribute', () => {
         assert(
@@ -43,17 +45,23 @@ describe('Yett', () => {
         assertThatScriptDidExecute('script')
         assertThatScriptDidNotExecute('dynamic')
         assertThatScriptDidNotExecute('script-blocked')
+        assertThatScriptDidNotExecute('script-module')
+        assertThatScriptDidNotExecute('script-module-blocked')
 
         window.yett.unblock('dynamic.js')
         await new Promise(resolve => setTimeout(resolve, 1000))
         assertThatScriptDidExecute('script')
         assertThatScriptDidExecute('dynamic')
         assertThatScriptDidNotExecute('script-blocked')
+        assertThatScriptDidNotExecute('script-module')
+        assertThatScriptDidNotExecute('script-module-blocked')
 
         window.yett.unblock()
         await new Promise(resolve => setTimeout(resolve, 1000))
         assertThatScriptDidExecute('script')
         assertThatScriptDidExecute('dynamic')
         assertThatScriptDidExecute('script-blocked')
+        assertThatScriptDidExecute('script-module')
+        assertThatScriptDidExecute('script-module-blocked')
     })
 })
